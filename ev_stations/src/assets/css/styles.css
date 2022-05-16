@@ -830,11 +830,6 @@ a:hover {
 	text-align: center;
 }
 
-.footer .decoration-circles {
-	position: absolute;
-	top: 96px;
-	left: -60px;
-}
 
 .footer div[class*="col"] {  
 	/* selects all elements which have classes starting with col */
@@ -1334,13 +1329,6 @@ a:hover {
 		margin-left: 2.75rem;
 	}
 	/* end of contact */
-
-
-	/* Footer */
-	.footer .decoration-circles {
-		left: 0;
-	}
-	/* end of footer */
 
 
 	/* Extra Pages */
