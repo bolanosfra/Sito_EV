@@ -1,5 +1,8 @@
- <app-parte1></app-parte1>
-  
- <app-parte2></app-parte2>
- <!-- Fare qui le richieste -->
- <app-parte3></app-parte3>
+<div class="container">
+    <br>
+    Stazione: <input type="text" name="na" #newname>
+   <button (click) = "find(newname)" >TROVA</button>
+</div>
+<br><br>
+
+<app-mostra [listaDati]="dati"></app-mostra>
