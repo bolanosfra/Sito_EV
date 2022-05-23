@@ -23,11 +23,11 @@ def get():
     resp = json_util.dumps(uss)
     return Response(resp, mimetype='application/json')
 
-@app.route('/dati/<string>', methods=['GET'])
+@app.route('/search/<string>', methods=['GET'])
 def onedata(string):
     # GET a specific data by name
     if request.method == 'GET':
-        data = mongo.db.Stazioni.find({'Station_Name': string})
+        data = mongo.db.Stazioni.find({'$or': [{"Station_Name":string}, {"City":string}]})
         resp = json_util.dumps(data)
         return Response(resp, mimetype = 'application/json') 
 
