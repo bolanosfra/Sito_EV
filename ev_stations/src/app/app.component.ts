@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
 
   find(stazione : HTMLInputElement){
    let m = stazione.value;
-   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-p7i7yzyp7x1.ws-eu45.gitpod.io/" + "search/" + m);
+   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-vgmox2li1li.ws-eu46.gitpod.io/" + "search/" + m);
    this.dataFrame.subscribe(this.fati)
   }
 }

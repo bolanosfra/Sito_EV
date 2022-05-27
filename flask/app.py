@@ -14,12 +14,12 @@ CORS(app)
 @app.route('/dati')
 # Prendere i dati da MongoDB
 def prova():
-    return "Per prendere tutti dati dentro il dataframe aggiungi url + /df "
+    return "Aggiungere url + /df per visualizzare tutti i dati."
 
 @app.route('/')
 # Prendere i dati da MongoDB
 def get():
-    uss = mongo.db.Stazioni.find()#.limit(10)
+    uss = mongo.db.Stazioni.find()
     resp = json_util.dumps(uss)
     return Response(resp, mimetype='application/json')
 
@@ -27,9 +27,9 @@ def get():
 def onedata(string):
     # GET a specific data by name
     if request.method == 'GET':
-        data = mongo.db.Stazioni.find({'$or': [{"Station_Name":string}, {"City":string}]})
+        data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
         resp = json_util.dumps(data)
-        return Response(resp, mimetype = 'application/json') 
+        return Response(resp, mimetype = 'application/json')
 
 if __name__ == '__main__':
     app.run()
