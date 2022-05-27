@@ -27,7 +27,8 @@ def get():
 def onedata(string):
     # GET a specific data by name
     if request.method == 'GET':
-        data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
+        # data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
+        data = mongo.db.Stazioni.find({'$and': [{'$or': [{"Station_Name": string}, {"City": string}]}, {'$or': [{"State": string}, {"EV_Network": string}]}]})
         resp = json_util.dumps(data)
         return Response(resp, mimetype = 'application/json')
 

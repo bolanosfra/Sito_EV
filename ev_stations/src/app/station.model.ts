@@ -8,7 +8,7 @@ export class Station {
     Station_Phone: string = ""; 
     EV_Network: string = ""; 
     Latitude: number = 0;
-    Longitude: string = "";
+    Longitude: number = 0;
     Owner_Type_Code: number = 0;
     Country: string = "";
 }
