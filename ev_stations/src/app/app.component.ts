@@ -10,23 +10,28 @@ import { Station } from './station.model';
 })
 export class AppComponent implements OnInit{
   title = 'EV_Stations';
+
+  /** Metodo che fa una get e ritorna un observable con i dati in una lista */
   dataFrame: Observable<Station[]>| undefined;
   dati:Station[] = undefined!;
   
-  constructor(private http: HttpClient){
   
+  constructor(private http: HttpClient){
   }
   ngOnInit(): void {
-    
+
   }
-  fati = (data: Station[]) => {
+  fati = (data: Station[]) => { /** Arrow Function che notifica la risposta e mostra i dati nella console */
     this.dati = data;
     console.log(data);
   }
-
+  
   find(stazione : HTMLInputElement){
+
    let m = stazione.value;
-   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-xn6rwtvmfi7.ws-eu46.gitpod.io/" + "search/" + m);
+   
+   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-zawywz6frob.ws-eu46.gitpod.io/" + "search/" + m);
+   /** Il link viene preso dopo aver avviato Flask ('flask run') e cambia ogni volta che si utilizza un nuovo workspace */
    this.dataFrame.subscribe(this.fati)
   }
 }

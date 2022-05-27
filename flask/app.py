@@ -11,13 +11,7 @@ app.config["MONGO_URI"] = "mongodb://sac:Camera1@cluster0-shard-00-00.x1eis.mong
 mongo = PyMongo(app)
 CORS(app)
 
-@app.route('/dati')
-# Prendere i dati da MongoDB
-def prova():
-    return "Aggiungere url + /df per visualizzare tutti i dati."
-
 @app.route('/')
-# Prendere i dati da MongoDB
 def get():
     uss = mongo.db.Stazioni.find()
     resp = json_util.dumps(uss)
@@ -25,10 +19,10 @@ def get():
 
 @app.route('/search/<string>', methods=['GET'])
 def onedata(string):
-    # GET a specific data by name
+    # Il metodo 'GET' 
     if request.method == 'GET':
-        # data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
-        data = mongo.db.Stazioni.find({'$and': [{'$or': [{"Station_Name": string}, {"City": string}]}, {'$or': [{"State": string}, {"EV_Network": string}]}]})
+        data = mongo.db.Stazioni.find({'$or': [{"Station_Name": string}, {"City": string}]})
+        # data = mongo.db.Stazioni.find({'$and': [{'$or': [{"Station_Name": string}, {"City": string}]}, {'$or': [{"State": string}, {"EV_Network": string}]}]})
         resp = json_util.dumps(data)
         return Response(resp, mimetype = 'application/json')
 
