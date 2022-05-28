@@ -6,6 +6,7 @@ import {MostraComponent} from './mostra/mostra.component';
 import { Parte1Component } from './parte1/parte1.component';
 import { Parte2Component } from './parte2/parte2.component';
 import { Parte3Component } from './parte3/parte3.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { Parte3Component } from './parte3/parte3.component';
     Parte1Component,
     Parte2Component,
     Parte3Component,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

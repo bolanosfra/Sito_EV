@@ -2,10 +2,12 @@
 <app-parte2></app-parte2>
 <div class="container">
     <br>
+    <!-- Viene creato un input per fare le richieste -->
     Stazione/Città: <input type="text" name="na" #newname>
     <button (click) = "find(newname)" >TROVA</button>
 </div>
 <br><br>
 
 <app-mostra [listaDati]="dati"></app-mostra>
+<app-map></app-map>
 <app-parte3></app-parte3>

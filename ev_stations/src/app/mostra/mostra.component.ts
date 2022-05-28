@@ -7,6 +7,7 @@ import { Station } from '../station.model';
   styleUrls: ['./mostra.component.css']
 })
 export class MostraComponent implements OnInit {
+  /** I dati vengono passati alla variabile 'listaDati' */
   @Input() listaDati : Station[]  = undefined!;
   constructor() { }
 
