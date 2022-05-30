@@ -7,6 +7,7 @@ import { Parte1Component } from './parte1/parte1.component';
 import { Parte2Component } from './parte2/parte2.component';
 import { Parte3Component } from './parte3/parte3.component';
 import { MapComponent } from './map/map.component';
+import { MarkerService } from './marker.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MapComponent } from './map/map.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [MarkerService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

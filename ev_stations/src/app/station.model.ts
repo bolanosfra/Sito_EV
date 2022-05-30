@@ -12,4 +12,4 @@ export class Station {
     Owner_Type_Code: number = 0;
     Country: string = "";
 }
-/** Viene creata una classe 'Station' e vengono definiti i tipi di dati che si trovano nel file Json */
+/** Viene creata una classe 'Station' e vengono definiti i tipi di dati che si trovano nel file JSON */
