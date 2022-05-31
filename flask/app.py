@@ -31,21 +31,22 @@ def onedata(string):
         return Response(resp, mimetype = 'application/json')
 
 
-@app.route('/markers', methods=['GET'])
-def markersGet():
+@app.route('/markers/<string>', methods=['GET'])
+def markersGet(string):
         points = []
-        result = mongo.db.Stazioni.find().limit(1)
+        result = mongo.db.Stazioni.find({'Station_Name': string})
         for i in result:
             points.append({
                 "Coordinates": {
-                    "lng": i['Longitude'],
-                    "lat": i['Latitude'],
+                    "Longitude": i["Longitude"],
+                    "Latitude": i["Latitude"],
                     "Station_Name": i["Station_Name"],
                     "City": i["City"]
 
                 }
             })
         return jsonify(points)
+
 
 if __name__ == '__main__':
     app.run()
