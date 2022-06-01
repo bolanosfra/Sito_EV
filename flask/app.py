@@ -31,8 +31,25 @@ def onedata(string):
         return Response(resp, mimetype = 'application/json')
 
 
-@app.route('/markers/<string>', methods=['GET'])
-def markersGet(string):
+#---- MAP <GEOPANDAS>
+@app.route('/markers', methods=['GET'])
+def markersGet():
+        points = []
+        result = mongo.db.Stazioni.find().limit(200)
+        for i in result:
+            points.append({
+                "Coordinates": {
+                    "Longitude": i["Longitude"],
+                    "Latitude": i["Latitude"],
+                    "Station_Name": i["Station_Name"],
+                    "City": i["City"]
+                }
+            })
+        return jsonify(points)
+
+#MAP <GEOPANDAS> COL IL NIL
+@app.route('/markers/station/<string>', methods=['GET'])
+def markersGetT(string):
         points = []
         result = mongo.db.Stazioni.find({'Station_Name': string})
         for i in result:
