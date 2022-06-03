@@ -37,7 +37,7 @@ export class AppComponent implements OnInit{
 
    /** Il link viene preso dopo aver avviato Flask ('flask run') e cambia ogni volta che si utilizza un nuovo workspace */
    //** Viene utilizzato il metodo 'GET' per prendere i dati dal file JSON o da Flask ed inserirli nella variabile 'dataFrame' */
-   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-jd02n9mkln2.ws-eu46.gitpod.io/" + "search/" + m);
+   this.dataFrame = this.http.get<Station[]>("https://5000-saccullop-sitoev-p575htyk8xf.ws-eu46.gitpod.io/" + "search/" + m);
    /** Un'istanza Observable inizia a inviare valori solo quando qualcuno chiama la funzione 'subscricbe()' e poi viene chiamata la funzione 'fati' */
    this.dataFrame.subscribe(this.fati)
   }
