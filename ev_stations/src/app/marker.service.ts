@@ -13,6 +13,7 @@ export class MarkerService {
   constructor(private http: HttpClient) { 
     
   }
+  
    makeCapitalMarkers(map: L.Map): void {
     this.http.get(this.baseUrl).subscribe((res: any) => {
       for (const c of res) {
