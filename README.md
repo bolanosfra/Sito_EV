@@ -14,5 +14,5 @@ alla fine dell'URL;
 
 # IN SINTESI:
 Una volta eseguito, è possibile visualizzare le informazioni delle stazioni di rifornimento presenti negli Stati Uniti. Nella pagina è presente una casella di testo
-nella quale scrivere il nome di una città o di una stazione (scrivere correttamente il nome, lettere maiuscole, spazi, numeri) per visualizzare tutte le informazioni.
+nella quale scrivere il nome di una città o di una stazione (scrivere correttamente con spazi e numeri, è possibile ignorare maiuscole e minuscole),esempio(shell - inman) per visualizzare tutte le informazioni.
 Inoltre, le stazioni vengono visualizzate in una mappa. Cliccando sui marker è possibile visualizzare città e nome della stazione in questione.
